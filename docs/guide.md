@@ -1,16 +1,14 @@
-# Which formula when? / کون سا فارمولا کب
+# Which formula when?
 
 A short note for each sheet on which approach to pick and why. Every note has an English and an Urdu version. This file is written by hand (unlike `formulas.md`, which is generated), so edit it freely.
 
-ہر شیٹ کے لیے مختصر رہنمائی کہ کون سا طریقہ کب بہتر ہے۔ یہ فائل ہاتھ سے لکھی گئی ہے (`formulas.md` کے برعکس جو خود بنتی ہے)، اس لیے اسے آزادی سے بدل سکتے ہیں۔
-
 Full formulas and results: [formulas.md](formulas.md).
 
-**Excel versions / ایکسل ورژن:** `UNIQUE`, `FILTER`, `BYROW`, `LET`, `REDUCE` and `#` spill references need Excel 365/2021. `SUM(--(...))`-style formulas need Ctrl+Shift+Enter in Excel 2019 and older; `SUMPRODUCT` does not.
+**Excel versions:** `UNIQUE`, `FILTER`, `BYROW`, `LET`, `REDUCE` and `#` spill references need Excel 365/2021. `SUM(--(...))`-style formulas need Ctrl+Shift+Enter in Excel 2019 and older; `SUMPRODUCT` does not.
 
 <div dir="rtl" lang="ur">
 
-`UNIQUE`، `FILTER`، `BYROW`، `LET`، `REDUCE` اور `#` والے spill ریفرنس کے لیے Excel 365/2021 چاہیے۔ `SUM(--(...))` جیسے فارمولے Excel 2019 اور پرانے ورژن میں Ctrl+Shift+Enter مانگتے ہیں؛ `SUMPRODUCT` نہیں مانگتا۔
+ہر شیٹ کے لیے مختصر رہنمائی کہ کون سا طریقہ کب بہتر ہے۔ یہ فائل ہاتھ سے لکھی گئی ہے، جبکہ فارمولوں کی فہرست والی فائل خود بنتی ہے۔ ایکسل ورژن کے بارے میں: UNIQUE FILTER BYROW LET اور REDUCE کے لیے Excel 365 یا Excel 2021 چاہیے۔ پرانے ورژن میں SUM والے array فارمولے Ctrl+Shift+Enter مانگتے ہیں، جبکہ SUMPRODUCT نہیں مانگتا۔
 
 </div>
 
@@ -20,7 +18,7 @@ Use `SUMPRODUCT(--(YEAR(range)=year))` for the shortest, most readable formula. 
 
 <div dir="rtl" lang="ur">
 
-مختصر اور آسان فارمولا چاہیے تو `SUMPRODUCT(--(YEAR(range)=year))` استعمال کریں۔ بڑے ڈیٹا میں `COUNTIFS` کے ساتھ `DATE(year,1,1)` اور `DATE(year,12,31)` عموماً زیادہ تیز رہتا ہے، کیونکہ یہ ہر قطار سے سال نکالنے کے بجائے تاریخوں کا سیدھا موازنہ کرتا ہے۔
+مختصر اور آسان فارمولا چاہیے تو SUMPRODUCT کے ساتھ YEAR استعمال کریں۔ بڑے ڈیٹا میں COUNTIFS کے ساتھ DATE والی حدیں عموماً زیادہ تیز رہتی ہیں، کیونکہ یہ ہر قطار سے سال نکالنے کے بجائے تاریخوں کا سیدھا موازنہ کرتی ہیں۔
 
 </div>
 
@@ -32,7 +30,7 @@ Use `SUMPRODUCT(--(YEAR(range)=year))` for the shortest, most readable formula. 
 
 <div dir="rtl" lang="ur">
 
-دو تاریخوں کے درمیان گننے کے لیے پہلی پسند `COUNTIFS` ہے (رقم جمع کرنی ہو تو `SUMIFS`): پڑھنے میں آسان اور تیز۔ اگر شرط میں OR ہو یا کالم پر ایسا حساب کرنا ہو جو COUNTIFS نہیں کر سکتا تو `SUMPRODUCT` لیں۔ یہاں دونوں حدیں شامل ہیں (`>=` اور `<=`)۔
+دو تاریخوں کے درمیان گننے کے لیے پہلی پسند COUNTIFS ہے، اور رقم جمع کرنی ہو تو SUMIFS۔ دونوں پڑھنے میں آسان اور تیز ہیں۔ اگر شرط میں یا والی منطق ہو، یا کالم پر ایسا حساب کرنا ہو جو COUNTIFS نہیں کر سکتا، تو SUMPRODUCT لیں۔ یہاں شروع اور آخر کی دونوں تاریخیں گنتی میں شامل ہیں۔
 
 </div>
 
@@ -44,7 +42,7 @@ Same two approaches as Sheet1. The new part is `UNIQUE(YEAR(...))`, which builds
 
 <div dir="rtl" lang="ur">
 
-وہی دو طریقے جو Sheet1 میں ہیں۔ نئی چیز `UNIQUE(YEAR(...))` ہے جو سالوں کی فہرست خود بناتی ہے، اس لیے نئی تاریخیں شامل کرنے پر سال دوبارہ ٹائپ نہیں کرنے پڑتے (Excel 365/2021)۔
+طریقے وہی ہیں جو پہلی شیٹ میں ہیں۔ نئی چیز UNIQUE ہے جو سالوں کی فہرست خود بناتی ہے، اس لیے نئی تاریخیں شامل کرنے پر سال دوبارہ ٹائپ نہیں کرنے پڑتے۔ اس کے لیے Excel 365 یا Excel 2021 چاہیے۔
 
 </div>
 
@@ -56,7 +54,7 @@ Start with `COUNTIFS` and `SUMIFS`. `SUMPRODUCT` does the same job and needs no 
 
 <div dir="rtl" lang="ur">
 
-پہلے `COUNTIFS` اور `SUMIFS` آزمائیں۔ `SUMPRODUCT` وہی کام کرتا ہے اور Ctrl+Shift+Enter نہیں مانگتا۔ `SUM(FILTER(...))` تب کام کا ہے جب میچ ہونے والی قطاریں بھی دیکھنی ہوں، مگر کوئی میچ نہ ہو تو `#CALC!` آتا ہے۔ سادہ `SUM((...)*(...))` والے فارمولے Excel 2019 اور پرانے ورژن میں Ctrl+Shift+Enter مانگتے ہیں۔
+پہلے COUNTIFS اور SUMIFS آزمائیں۔ SUMPRODUCT وہی کام کرتا ہے اور Ctrl+Shift+Enter نہیں مانگتا۔ SUM کے ساتھ FILTER تب کام کا ہے جب میچ ہونے والی قطاریں بھی دیکھنی ہوں، مگر کوئی میچ نہ ہو تو اس میں error آ جاتی ہے۔ سادہ SUM والے array فارمولے پرانے Excel میں Ctrl+Shift+Enter مانگتے ہیں۔
 
 </div>
 
@@ -68,7 +66,7 @@ Start with `COUNTIFS` and `SUMIFS`. `SUMPRODUCT` does the same job and needs no 
 
 <div dir="rtl" lang="ur">
 
-سب سے آسان `COUNTIF(range, value)` ہے۔ اگر ویلیو میں `*`، `?` یا `~` ہو سکتا ہو تو `SUMPRODUCT(--(range=value))` بہتر ہے، کیونکہ COUNTIF انہیں وائلڈ کارڈ سمجھتا ہے۔ دونوں بڑے/چھوٹے حروف کا فرق نہیں کرتے۔ `UNIQUE` الگ الگ ویلیوز کی فہرست خود بنا دیتا ہے۔
+سب سے آسان COUNTIF ہے۔ اگر ویلیو میں ستارہ، سوالیہ نشان یا ٹلڈا جیسے خاص نشان ہو سکتے ہوں تو SUMPRODUCT بہتر ہے، کیونکہ COUNTIF انہیں وائلڈ کارڈ سمجھتا ہے۔ دونوں بڑے اور چھوٹے حروف کا فرق نہیں کرتے۔ UNIQUE الگ الگ ویلیوز کی فہرست خود بنا دیتا ہے۔
 
 </div>
 
@@ -80,7 +78,7 @@ Start with `COUNTIFS` and `SUMIFS`. `SUMPRODUCT` does the same job and needs no 
 
 <div dir="rtl" lang="ur">
 
-سب سے مختصر `SUMPRODUCT(COUNTIF(range, list))` ہے۔ اگر فہرست میں ایک ہی آئٹم دو بار آ سکتا ہو تو `MATCH` والا طریقہ (`ISNUMBER(MATCH(range, list, 0))`) لیں: وہ ہر سیل کو ایک ہی بار گنتا ہے، جبکہ COUNTIF فہرست کی ہر تکرار پر وہی سیل دوبارہ گنتا ہے۔ پرانے Excel میں Ctrl+Shift+Enter سے بچنا ہو تو `SUM` کی جگہ `SUMPRODUCT` استعمال کریں۔
+سب سے مختصر طریقہ SUMPRODUCT کے اندر COUNTIF ہے۔ اگر فہرست میں ایک ہی آئٹم دو بار آ سکتا ہو تو MATCH والا طریقہ لیں، کیونکہ وہ ہر سیل کو ایک ہی بار گنتا ہے، جبکہ COUNTIF فہرست کی ہر تکرار پر وہی سیل دوبارہ گنتا ہے۔ پرانے Excel میں Ctrl+Shift+Enter سے بچنا ہو تو SUM کی جگہ SUMPRODUCT استعمال کریں۔
 
 </div>
 
@@ -92,7 +90,7 @@ For two or three fixed values, `SUM(COUNTIF(range, {"Red","Blue"}))` is the quic
 
 <div dir="rtl" lang="ur">
 
-دو تین مقررہ ویلیوز ہوں تو `SUM(COUNTIF(range, {"Red","Blue"}))` ٹائپ کرنا سب سے تیز ہے۔ اگر ویلیوز سیلز میں ہوں تو 05-P والا فہرست کا طریقہ لیں۔ نیچے والا ٹیبل `UNIQUE` اور `SUMPRODUCT`/`SUM` کے ساتھ ہر رنگ الگ گنتا ہے۔
+دو تین مقررہ ویلیوز ہوں تو انہیں براہ راست فارمولے میں لکھ کر COUNTIF پر SUM لگانا سب سے تیز ہے۔ اگر ویلیوز سیلز میں ہوں تو پانچویں شیٹ والا فہرست کا طریقہ لیں۔ نیچے والا ٹیبل UNIQUE کے ساتھ ہر رنگ الگ گنتا ہے۔
 
 </div>
 
@@ -104,7 +102,7 @@ Use `COUNTIF(range, ">"&cell)` when the threshold sits in a cell and may change,
 
 <div dir="rtl" lang="ur">
 
-حد کسی سیل میں ہو اور بدل سکتی ہو تو `COUNTIF(range, ">"&cell)` لیں، اور مستقل ہو تو سیدھا `">90"` لکھ دیں۔ پوری شرط (مثلاً `>90`) کسی سیل میں لکھ کر وہ سیل بھی دے سکتے ہیں۔ دوسری شرط ہو، یا اوپر اور نیچے دونوں حدیں ہوں، تو `COUNTIFS` پر جائیں۔
+حد کسی سیل میں ہو اور بدل سکتی ہو تو COUNTIF میں شرط کو سیل کے ساتھ جوڑ کر دیں، اور حد مستقل ہو تو سیدھا نمبر لکھ دیں۔ پوری شرط کسی سیل میں لکھ کر وہ سیل بھی دے سکتے ہیں۔ دوسری شرط ہو، یا اوپر اور نیچے دونوں حدیں ہوں، تو COUNTIFS پر جائیں۔
 
 </div>
 
@@ -116,7 +114,7 @@ Same idea as 07-P with `<` and `<=`: `COUNTIF(range, "<"&cell)` for a changing t
 
 <div dir="rtl" lang="ur">
 
-خیال وہی ہے جو 07-P میں ہے، بس `<` اور `<=` کے ساتھ: بدلتی حد کے لیے `COUNTIF(range, "<"&cell)`، مستقل حد کے لیے سیدھا `"<75"`، اور اضافی شرطوں یا دو حدوں کے لیے `COUNTIFS`۔
+خیال وہی ہے جو ساتویں شیٹ میں ہے، بس بڑے کی جگہ چھوٹا۔ بدلتی حد کے لیے سیل کے ساتھ جوڑ کر COUNTIF، مستقل حد کے لیے سیدھا نمبر، اور اضافی شرطوں کے لیے COUNTIFS۔
 
 </div>
 
@@ -128,7 +126,7 @@ These formulas count the cells that are found in the list (`ISNUMBER(MATCH(...))
 
 <div dir="rtl" lang="ur">
 
-یہ فارمولے ان سیلز کو گنتے ہیں جو فہرست میں ملتے ہیں (`ISNUMBER(MATCH(...))`)۔ "کئی چیزوں کے برابر نہیں" گننے کے لیے یہ تعداد کل تعداد (`COUNTA`) سے منفی کر دیں، یا سیدھا `ISNA(MATCH(...))` استعمال کریں۔ `SUMPRODUCT` اس Ctrl+Shift+Enter سے بچاتا ہے جو پرانے Excel میں `SUM(--(...))` کو چاہیے۔
+یہ فارمولے ان سیلز کو گنتے ہیں جو فہرست میں ملتے ہیں۔ کئی چیزوں کے برابر نہیں گننے کے لیے یہ تعداد کل تعداد سے منفی کر دیں، جو COUNTA سے ملتی ہے، یا سیدھا ISNA کے ساتھ MATCH استعمال کریں۔ SUMPRODUCT اس Ctrl+Shift+Enter سے بچاتا ہے جو پرانے Excel میں SUM کو چاہیے۔
 
 </div>
 
@@ -140,7 +138,7 @@ A helper column with `LEN` plus `COUNTIF(range, ">"&n)` is the easiest to check 
 
 <div dir="rtl" lang="ur">
 
-`LEN` کا ہیلپر کالم اور اس پر `COUNTIF(range, ">"&n)` آنکھ سے جانچنے میں سب سے آسان ہے۔ ہیلپر کالم نہ چاہیے ہو تو `SUMPRODUCT(--(LEN(range)>n))` ایک ہی سیل میں کام کر دیتا ہے۔ شیٹ کا `SUM(N(...))` والا طریقہ بھی چلتا ہے مگر پرانے Excel میں Ctrl+Shift+Enter مانگتا ہے۔
+LEN کا ہیلپر کالم اور اس پر COUNTIF آنکھ سے جانچنے میں سب سے آسان ہے۔ ہیلپر کالم نہ چاہیے ہو تو SUMPRODUCT کے اندر LEN ایک ہی سیل میں کام کر دیتا ہے۔ شیٹ کا SUM اور N والا طریقہ بھی چلتا ہے مگر پرانے Excel میں Ctrl+Shift+Enter مانگتا ہے۔
 
 </div>
 
@@ -152,7 +150,7 @@ A helper column with `LEN` plus `COUNTIF(range, ">"&n)` is the easiest to check 
 
 <div dir="rtl" lang="ur">
 
-سب سے آسان `COUNTBLANK` ہے۔ `COUNTIF(range, "")` اور `SUMPRODUCT(--(range=""))` وہی جواب دیتے ہیں، اور یہ سب ان سیلز کو بھی گنتے ہیں جن میں `""` لوٹانے والا فارمولا ہو۔ کسی اور شرط کے ساتھ خالی سیل گننے ہوں تو `COUNTIFS(range, "", other, "A")` لیں۔ جس سیل میں صرف ایک اسپیس ہو وہ ان میں سے کسی کے لیے بھی خالی نہیں۔
+سب سے آسان COUNTBLANK ہے۔ COUNTIF اور SUMPRODUCT بھی وہی جواب دیتے ہیں، اور یہ سب ان سیلز کو بھی گنتے ہیں جن میں خالی متن لوٹانے والا فارمولا ہو۔ کسی اور شرط کے ساتھ خالی سیل گننے ہوں تو COUNTIFS لیں۔ جس سیل میں صرف ایک اسپیس ہو وہ ان میں سے کسی کے لیے بھی خالی نہیں۔
 
 </div>
 
@@ -164,7 +162,7 @@ A helper column with `LEN` plus `COUNTIF(range, ">"&n)` is the easiest to check 
 
 <div dir="rtl" lang="ur">
 
-سب سے آسان `COUNTA` ہے، مگر یہ (اور `COUNTIF(range, "<>")` بھی) ان سیلز کو بھی گنتا ہے جن میں `""` لوٹانے والا فارمولا ہو۔ `SUMPRODUCT(--(range<>""))` انہیں خالی سمجھتا ہے، اس لیے ڈیٹا فارمولوں سے آ رہا ہو تو یہی لیں۔ `COUNT` صرف نمبر گنتا ہے، اس لیے ٹیکسٹ پر 0 دیتا ہے (P8 دیکھیں)۔ دوسری شرط ہو تو `COUNTIFS(range, "<>", other, "A")` استعمال کریں۔
+سب سے آسان COUNTA ہے، مگر یہ ان سیلز کو بھی گنتا ہے جن میں خالی متن لوٹانے والا فارمولا ہو، اور COUNTIF کی نہ برابر والی شرط بھی یہی کرتی ہے۔ SUMPRODUCT انہیں خالی سمجھتا ہے، اس لیے ڈیٹا فارمولوں سے آ رہا ہو تو یہی لیں۔ COUNT صرف نمبر گنتا ہے، اس لیے ٹیکسٹ پر صفر دیتا ہے۔ دوسری شرط ہو تو COUNTIFS استعمال کریں۔
 
 </div>
 
@@ -176,7 +174,7 @@ Adding two separate counts (one per word) double counts a row that contains both
 
 <div dir="rtl" lang="ur">
 
-دو الگ گنتیاں (ہر لفظ کی ایک) جمع کریں تو وہ قطار دو بار گنی جاتی ہے جس میں دونوں الفاظ ہوں۔ یہ شیٹ اس سے بچتی ہے: ہر قطار کو "یا" کے لیے جانچتی ہے اور TRUE قطاریں جمع کرتی ہے۔ `FIND` بڑے/چھوٹے حروف میں فرق کرتا ہے؛ "Blue" اور "blue" دونوں چاہیے ہوں تو `SEARCH` یا `COUNTIF` کا وائلڈ کارڈ (`"*blue*"`) لیں۔
+دو الگ گنتیاں، ہر لفظ کی ایک، جمع کریں تو وہ قطار دو بار گنی جاتی ہے جس میں دونوں الفاظ ہوں۔ یہ شیٹ اس سے بچتی ہے: ہر قطار کو یا کے لیے جانچتی ہے اور درست قطاریں جمع کرتی ہے۔ FIND میں بڑے اور چھوٹے حروف کا فرق ہوتا ہے؛ دونوں چاہیے ہوں تو SEARCH یا COUNTIF کا وائلڈ کارڈ لیں۔
 
 </div>
 
@@ -188,7 +186,7 @@ Adding two separate counts (one per word) double counts a row that contains both
 
 <div dir="rtl" lang="ur">
 
-`COUNTIF(range, "<0")` کافی ہے۔ `SUM(--(range<0))` وہی تعداد دیتا ہے مگر پرانے Excel میں اسے array کے طور پر (Ctrl+Shift+Enter سے) ڈالنا پڑتا ہے۔ صفر نہ منفی ہے نہ مثبت۔
+COUNTIF کافی ہے۔ SUM والا array طریقہ وہی تعداد دیتا ہے مگر پرانے Excel میں Ctrl+Shift+Enter مانگتا ہے۔ صفر نہ منفی ہے نہ مثبت۔
 
 </div>
 
@@ -200,7 +198,7 @@ Adding two separate counts (one per word) double counts a row that contains both
 
 <div dir="rtl" lang="ur">
 
-پورے نمبروں پر `ISODD` اور `MOD(x,2)=1` ایک جیسا نتیجہ دیتے ہیں۔ اعشاریہ والے نمبروں پر فرق آتا ہے: `ISODD` پہلے اعشاریہ حصہ ہٹا دیتا ہے، `MOD` نہیں ہٹاتا۔ ٹیکسٹ پر دونوں `#VALUE!` دیتے ہیں۔ `ISODD(+range)` میں `+` اسے رینج کے ہر سیل پر چلنے پر مجبور کرتا ہے۔
+پورے نمبروں پر ISODD اور MOD ایک جیسا نتیجہ دیتے ہیں۔ اعشاریہ والے نمبروں پر فرق آتا ہے: ISODD پہلے اعشاریہ حصہ ہٹا دیتا ہے، MOD نہیں ہٹاتا۔ ٹیکسٹ پر دونوں error دیتے ہیں۔ ISODD کے اندر جمع کا نشان اسے رینج کے ہر سیل پر چلنے پر مجبور کرتا ہے۔
 
 </div>
 
@@ -212,7 +210,7 @@ Adding two separate counts (one per word) double counts a row that contains both
 
 <div dir="rtl" lang="ur">
 
-مثبت نمبروں کے لیے `COUNTIF(range, ">0")`، اور صفر بھی شامل کرنا ہو تو `">=0"`۔ خبردار: `SUM(--(range>=0))` خالی سیلز کو بھی گن لیتا ہے (خالی سیل کا موازنہ 0 کی طرح ہوتا ہے)، جبکہ `COUNTIF` نہیں گنتا۔
+مثبت نمبروں کے لیے COUNTIF میں صفر سے بڑا، اور صفر بھی شامل کرنا ہو تو بڑا یا برابر۔ خبردار: SUM والا array طریقہ خالی سیلز کو بھی گن لیتا ہے، کیونکہ خالی سیل کا موازنہ صفر کی طرح ہوتا ہے، جبکہ COUNTIF نہیں گنتا۔
 
 </div>
 
@@ -224,7 +222,7 @@ Adding two separate counts (one per word) double counts a row that contains both
 
 <div dir="rtl" lang="ur">
 
-`COUNTIF(range, "*text*")` سب سے مختصر ہے اور حروف کی بڑائی چھوٹائی کا فرق نہیں کرتا۔ `ISNUMBER(SEARCH(...))` وہی نتیجہ دیتا ہے اور بڑے فارمولوں کے اندر استعمال ہو سکتا ہے۔ `FIND` میں بڑے/چھوٹے حروف کا فرق ہوتا ہے (شیٹ رینج پر `LOWER` لگاتی ہے، جو تب ہی کام کرتا ہے جب تلاش کا لفظ چھوٹے حروف میں ہو)۔ اگر لفظ میں خود `*` یا `?` ہو تو `FIND` لیں، کیونکہ `SEARCH` اور `COUNTIF` انہیں وائلڈ کارڈ سمجھتے ہیں۔
+COUNTIF کے ساتھ ستارے والا پیٹرن سب سے مختصر ہے اور حروف کی بڑائی چھوٹائی کا فرق نہیں کرتا۔ SEARCH کے ساتھ ISNUMBER وہی نتیجہ دیتا ہے اور بڑے فارمولوں کے اندر استعمال ہو سکتا ہے۔ FIND میں بڑے اور چھوٹے حروف کا فرق ہوتا ہے۔ اگر لفظ میں خود ستارہ یا سوالیہ نشان ہو تو FIND لیں، کیونکہ SEARCH اور COUNTIF انہیں وائلڈ کارڈ سمجھتے ہیں۔
 
 </div>
 
@@ -236,7 +234,7 @@ Mirror image of 17-P: `COUNTIF(range, "<>*a*")` is the shortest, `NOT(ISNUMBER(S
 
 <div dir="rtl" lang="ur">
 
-یہ 17-P کا الٹ ہے: `COUNTIF(range, "<>*a*")` سب سے مختصر، اور `NOT(ISNUMBER(SEARCH(...)))` سب سے لچکدار ہے۔ ہر طریقے میں خالی سیل بھی "نہیں رکھتا" میں گنے جاتے ہیں؛ انہیں چھوڑنا ہو تو `COUNTIFS` میں دوسری شرط `range, "<>"` لگا دیں۔
+یہ سترہویں شیٹ کا الٹ ہے: COUNTIF سب سے مختصر، اور NOT کے ساتھ ISNUMBER اور SEARCH سب سے لچکدار ہے۔ ہر طریقے میں خالی سیل بھی نہیں رکھتا میں گنے جاتے ہیں؛ انہیں چھوڑنا ہو تو COUNTIFS میں دوسری شرط لگا دیں۔
 
 </div>
 
@@ -248,7 +246,7 @@ Mirror image of 17-P: `COUNTIF(range, "<>*a*")` is the shortest, `NOT(ISNUMBER(S
 
 <div dir="rtl" lang="ur">
 
-`ISERROR` ہر قسم کی error گنتا ہے؛ `ISERR` `#N/A` کو چھوڑ دیتا ہے۔ کوئی خاص error گننی ہو تو `ERROR.TYPE` کو `IFNA` یا `IFERROR` میں لپیٹ کر استعمال کریں (3 کا مطلب `#VALUE!`)، کیونکہ عام سیلز پر `ERROR.TYPE` خود `#N/A` دیتا ہے۔ سادہ گنتی کے لیے `SUMPRODUCT(--ISERROR(range))` سب سے مختصر ہے۔
+ISERROR ہر قسم کی error گنتا ہے؛ ISERR صرف N/A والی error کو چھوڑ دیتا ہے۔ کوئی خاص error گننی ہو تو ERROR.TYPE کو IFNA یا IFERROR میں لپیٹ کر استعمال کریں، کیونکہ عام سیلز پر ERROR.TYPE خود N/A دیتا ہے۔ سادہ گنتی کے لیے SUMPRODUCT کے ساتھ ISERROR سب سے مختصر ہے۔
 
 </div>
 
@@ -260,7 +258,7 @@ Same functions as 19-P, but the formulas here count the cells that are **not** e
 
 <div dir="rtl" lang="ur">
 
-فنکشنز وہی ہیں جو 19-P میں ہیں، مگر یہاں کے فارمولے ان سیلز کو گنتے ہیں جن میں error **نہیں** ہے (نتیجہ 9)، حالانکہ شیٹ کا عنوان "contain errors" ہے۔ `SUMPRODUCT` اور `SUM(--...)` میں سے انتخاب 19-P کی طرح کریں۔
+فنکشنز وہی ہیں جو انیسویں شیٹ میں ہیں، مگر یہاں کے فارمولے ان سیلز کو گنتے ہیں جن میں error نہیں ہے، حالانکہ شیٹ کا عنوان errors والے سیلز کا ہے۔ SUMPRODUCT اور SUM میں سے انتخاب انیسویں شیٹ کی طرح کریں۔
 
 </div>
 
@@ -272,7 +270,7 @@ No formulas yet (work in progress). The related-functions list (`ISNUMBER`, `SEA
 
 <div dir="rtl" lang="ur">
 
-ابھی فارمولے نہیں لکھے گئے (کام جاری ہے)۔ متعلقہ فنکشنز کی فہرست (`ISNUMBER`، `SEARCH`، `MMULT`، `TRANSPOSE`، `REDUCE`) سے اندازہ ہوتا ہے کہ منصوبہ "Exclude" فہرست کے کسی بھی لفظ پر مشتمل نہ ہونے والے سیلز گننے کا ہے۔
+ابھی فارمولے نہیں لکھے گئے، کام جاری ہے۔ متعلقہ فنکشنز سے اندازہ ہوتا ہے کہ منصوبہ Exclude فہرست کے کسی بھی لفظ پر مشتمل نہ ہونے والے سیلز گننے کا ہے۔
 
 </div>
 
@@ -284,7 +282,7 @@ Easiest to read: a helper column `YEAR(date)` plus `COUNTIF` on it. In one cell,
 
 <div dir="rtl" lang="ur">
 
-پڑھنے میں سب سے آسان: `YEAR(date)` کا ہیلپر کالم اور اس پر `COUNTIF`۔ ایک ہی سیل میں `SUMPRODUCT(--(YEAR(range)=year))` چلتا ہے۔ بڑے ڈیٹا میں تاریخ کی حدوں والا `COUNTIFS` عموماً سب سے تیز ہے، مگر دھیان رہے کہ L8 میں `"<"&DATE(year,12,31)` ہے جو 31 دسمبر کو چھوڑ دیتا ہے۔ `"<="&DATE(year,12,31)` (یا `"<"&DATE(year+1,1,1)`) لگائیں؛ نمونہ ڈیٹا میں 31 دسمبر کی کوئی تاریخ نہیں، اس لیے موجودہ نتائج پر اثر نہیں پڑتا۔ `ANCHORARRAY` دراصل `#` والا spill ریفرنس ہے اور Excel 365/2021 مانگتا ہے۔
+پڑھنے میں سب سے آسان طریقہ YEAR کا ہیلپر کالم اور اس پر COUNTIF ہے۔ ایک ہی سیل میں SUMPRODUCT کے ساتھ YEAR چلتا ہے۔ بڑے ڈیٹا میں تاریخ کی حدوں والا COUNTIFS عموماً سب سے تیز ہے، مگر دھیان رہے کہ سیل L8 میں آخری حد کے لیے چھوٹا کا نشان استعمال ہوا ہے، جس سے 31 دسمبر رہ جاتا ہے۔ اسے چھوٹا یا برابر کر دیں۔ نمونہ ڈیٹا میں 31 دسمبر کی کوئی تاریخ نہیں، اس لیے موجودہ نتائج پر اثر نہیں پڑتا۔ ANCHORARRAY دراصل ہیش والا spill ریفرنس ہے اور Excel 365 یا Excel 2021 مانگتا ہے۔
 
 </div>
 
@@ -296,7 +294,7 @@ Easiest to read: a helper column `YEAR(date)` plus `COUNTIF` on it. In one cell,
 
 <div dir="rtl" lang="ur">
 
-`COUNTIFS` ایک کالم کا دوسرے کالم سے موازنہ نہیں کر سکتا، اس لیے `SUMPRODUCT(--(C>D))` استعمال کریں۔ `SUM(--(C>D))` وہی نتیجہ دیتا ہے مگر پرانے Excel میں Ctrl+Shift+Enter مانگتا ہے۔
+COUNTIFS ایک کالم کا دوسرے کالم سے موازنہ نہیں کر سکتا، اس لیے SUMPRODUCT استعمال کریں۔ SUM والا طریقہ وہی نتیجہ دیتا ہے مگر پرانے Excel میں Ctrl+Shift+Enter مانگتا ہے۔
 
 </div>
 
@@ -308,7 +306,7 @@ Easiest to read: a helper column `YEAR(date)` plus `COUNTIF` on it. In one cell,
 
 <div dir="rtl" lang="ur">
 
-`COUNTIFS` کسی کالم پر `MONTH()` نہیں لگا سکتا، اس لیے `SUMPRODUCT` کے اندر شرطوں کو ضرب دیں۔ اگر مہینہ ہمیشہ ایک معلوم سال کا ہو تو دوبارہ تاریخ کی حدوں والے `COUNTIFS` پر آ سکتے ہیں۔ `SUM` والا طریقہ پرانے Excel میں Ctrl+Shift+Enter مانگتا ہے۔
+COUNTIFS کسی کالم پر MONTH نہیں لگا سکتا، اس لیے SUMPRODUCT کے اندر شرطوں کو ضرب دیں۔ اگر مہینہ ہمیشہ ایک معلوم سال کا ہو تو دوبارہ تاریخ کی حدوں والے COUNTIFS پر آ سکتے ہیں۔ SUM والا طریقہ پرانے Excel میں Ctrl+Shift+Enter مانگتا ہے۔
 
 </div>
 
@@ -320,7 +318,7 @@ Easiest to read: a helper column `YEAR(date)` plus `COUNTIF` on it. In one cell,
 
 <div dir="rtl" lang="ur">
 
-AND شرطوں کے لیے `COUNTIFS` سب سے بہتر ہے: مختصر اور تیز۔ OR منطق درکار ہو (شرطیں `+` سے جمع کریں) یا کالموں پر فنکشن لگانے ہوں تو `SUMPRODUCT` متبادل ہے۔
+اور والی شرطوں کے لیے COUNTIFS سب سے بہتر ہے: مختصر اور تیز۔ یا والی منطق چاہیے ہو یا کالموں پر فنکشن لگانے ہوں تو SUMPRODUCT متبادل ہے۔
 
 </div>
 
@@ -332,7 +330,7 @@ AND شرطوں کے لیے `COUNTIFS` سب سے بہتر ہے: مختصر اور
 
 <div dir="rtl" lang="ur">
 
-`COUNTIF($B$7:$B$17, B7)` کو نیچے تک کاپی کریں تو ہر آئٹم کی تکرار کی تعداد نظر آتی ہے۔ نتیجہ 1 سے زیادہ ہو تو آئٹم دہرایا گیا ہے۔
+COUNTIF کو نیچے تک کاپی کریں تو ہر آئٹم کی تکرار کی تعداد نظر آتی ہے۔ نتیجہ ایک سے زیادہ ہو تو آئٹم دہرایا گیا ہے۔
 
 </div>
 
