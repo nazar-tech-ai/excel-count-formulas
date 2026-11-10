@@ -1,0 +1,260 @@
+﻿sheet,topic,cell,formula,type,cached_result
+Sheet1,Count birthdays by year,F5,=SUMPRODUCT(--(YEAR(data[Birthday])=E5)),array,3
+Sheet1,Count birthdays by year,O5,"=COUNTIFS(data[Birthday],"">=""&DATE(E5,1,1),data[Birthday],""<=""&DATE(E5,12,31))",normal,3
+Sheet1,Count birthdays by year,F6,=SUMPRODUCT(--(YEAR(data[Birthday])=E6)),array,5
+Sheet1,Count birthdays by year,O6,"=COUNTIFS(data[Birthday],"">=""&DATE(E6,1,1),data[Birthday],""<=""&DATE(E6,12,31))",normal,5
+Sheet1,Count birthdays by year,F7,=SUMPRODUCT(--(YEAR(data[Birthday])=E7)),array,3
+Sheet1,Count birthdays by year,O7,"=COUNTIFS(data[Birthday],"">=""&DATE(E7,1,1),data[Birthday],""<=""&DATE(E7,12,31))",normal,3
+Sheet1,Count birthdays by year,F8,=SUMPRODUCT(--(YEAR(data[Birthday])=E8)),array,1
+Sheet1,Count birthdays by year,O8,"=COUNTIFS(data[Birthday],"">=""&DATE(E8,1,1),data[Birthday],""<=""&DATE(E8,12,31))",normal,1
+01-P,Count cells between dates,H8,"=COUNTIFS(Data1[Birthday],"">=""&H6,Data1[Birthday],""<=""&H7)",normal,6
+01-P,Count cells between dates,H9,"=SUMIFS(Data1[Amount],Data1[Birthday],"">=""&H6,Data1[Birthday],""<=""&H7)",normal,3898
+01-P,Count cells between dates,H11,=SUMPRODUCT((Data1[Birthday]>=H6)*(Data1[Birthday]<=H7)),array,6
+01-P,Count cells between dates,H12,=SUMPRODUCT((Data1[Birthday]>=H6)*(Data1[Birthday]<=H7)*Data1[Amount]),array,3898
+02-P,Count birthdays by year,F8:F11,=UNIQUE(YEAR(Data2[Birthday])),array,1999
+02-P,Count birthdays by year,G8,=SUMPRODUCT(--(YEAR(Data2[Birthday])=F8)),array,3
+02-P,Count birthdays by year,G9,=SUMPRODUCT(--(YEAR(Data2[Birthday])=F9)),array,5
+02-P,Count birthdays by year,G10,=SUMPRODUCT(--(YEAR(Data2[Birthday])=F10)),array,3
+02-P,Count birthdays by year,G11,=SUMPRODUCT(--(YEAR(Data2[Birthday])=F11)),array,1
+02-P,Count birthdays by year,F17:F20,=UNIQUE(YEAR(Data2[Birthday])),array,1999
+02-P,Count birthdays by year,G17,"=COUNTIFS(Data2[Birthday],"">=""&DATE(F17,1,1),Data2[Birthday],""<=""&DATE(F17,12,31))",normal,3
+02-P,Count birthdays by year,G18,"=COUNTIFS(Data2[Birthday],"">=""&DATE(F18,1,1),Data2[Birthday],""<=""&DATE(F18,12,31))",normal,5
+02-P,Count birthdays by year,G19,"=COUNTIFS(Data2[Birthday],"">=""&DATE(F19,1,1),Data2[Birthday],""<=""&DATE(F19,12,31))",normal,3
+02-P,Count birthdays by year,G20,"=COUNTIFS(Data2[Birthday],"">=""&DATE(F20,1,1),Data2[Birthday],""<=""&DATE(F20,12,31))",normal,1
+03-P,Count cells between two numbers and sum,H8,=SUMPRODUCT((Data3[Score]>=F8)*(Data3[Score]<=G8)),array,2
+03-P,Count cells between two numbers and sum,I8,=SUMPRODUCT((Score>=F8)*(Score<=G8)*Score),array,147
+03-P,Count cells between two numbers and sum,J8,"=SUM(FILTER(Data3[Score],((Data3[Score]>=F8)*(Data3[Score]<=G8))))",array,147
+03-P,Count cells between two numbers and sum,H9,=SUMPRODUCT((Data3[Score]>=F9)*(Data3[Score]<=G9)),array,5
+03-P,Count cells between two numbers and sum,I9,=SUMPRODUCT((Score>=F9)*(Score<=G9)*Score),array,426
+03-P,Count cells between two numbers and sum,J9,"=SUM(FILTER(Data3[Score],((Data3[Score]>=F9)*(Data3[Score]<=G9))))",array,426
+03-P,Count cells between two numbers and sum,H10,=SUMPRODUCT((Data3[Score]>=F10)*(Data3[Score]<=G10)),array,4
+03-P,Count cells between two numbers and sum,I10,=SUMPRODUCT((Score>=F10)*(Score<=G10)*Score),array,395
+03-P,Count cells between two numbers and sum,J10,"=SUM(FILTER(Data3[Score],((Data3[Score]>=F10)*(Data3[Score]<=G10))))",array,395
+03-P,Count cells between two numbers and sum,H20,"=COUNTIFS(Data3[Score],"">=""&F20,Data3[Score],""<=""&G20)",normal,2
+03-P,Count cells between two numbers and sum,I20,=SUM((Score>=F20)*(Score<=G20)),array,2
+03-P,Count cells between two numbers and sum,J20,"=SUMIFS(Data3[Score],Data3[Score],"">=""&F20,Data3[Score],""<=""&G20)",normal,147
+03-P,Count cells between two numbers and sum,K20,=SUM((Score>=F20)*(Score<=G20)*Data3[Score]),array,147
+03-P,Count cells between two numbers and sum,H21,"=COUNTIFS(Data3[Score],"">=""&F21,Data3[Score],""<=""&G21)",normal,5
+03-P,Count cells between two numbers and sum,I21,=SUM((Score>=F21)*(Score<=G21)),array,5
+03-P,Count cells between two numbers and sum,J21,"=SUMIFS(Data3[Score],Data3[Score],"">=""&F21,Data3[Score],""<=""&G21)",normal,426
+03-P,Count cells between two numbers and sum,K21,=SUM((Score>=F21)*(Score<=G21)*Data3[Score]),array,426
+03-P,Count cells between two numbers and sum,H22,"=COUNTIFS(Data3[Score],"">=""&F22,Data3[Score],""<=""&G22)",normal,4
+03-P,Count cells between two numbers and sum,I22,=SUM((Score>=F22)*(Score<=G22)),array,4
+03-P,Count cells between two numbers and sum,J22,"=SUMIFS(Data3[Score],Data3[Score],"">=""&F22,Data3[Score],""<=""&G22)",normal,395
+03-P,Count cells between two numbers and sum,K22,=SUM((Score>=F22)*(Score<=G22)*Data3[Score]),array,395
+04-P,Count cells equal to,H8:H11,=UNIQUE(D8:D19),array,Red
+04-P,Count cells equal to,I8,"=COUNTIF(Color,H8)",normal,5
+04-P,Count cells equal to,I9,"=COUNTIF(Color,H9)",normal,2
+04-P,Count cells equal to,I10,"=COUNTIF(Color,H10)",normal,3
+04-P,Count cells equal to,I11,"=COUNTIF(Color,H11)",normal,2
+04-P,Count cells equal to,H18:H21,=UNIQUE(D8:D19),array,Red
+04-P,Count cells equal to,I18,=SUMPRODUCT(--(Color=H18)),array,5
+04-P,Count cells equal to,J18,=SUM(--(Color=H18)),array,5
+04-P,Count cells equal to,I19,=SUMPRODUCT(--(Color=H19)),array,2
+04-P,Count cells equal to,J19,=SUM(--(Color=H19)),array,2
+04-P,Count cells equal to,I20,=SUMPRODUCT(--(Color=H20)),array,3
+04-P,Count cells equal to,J20,=SUM(--(Color=H20)),array,3
+04-P,Count cells equal to,I21,=SUMPRODUCT(--(Color=H21)),array,2
+04-P,Count cells equal to,J21,=SUM(--(Color=H21)),array,2
+05-P,Count cells equal to one of many things,D8:D19,"=MATCH(B8:B19,Thinges,0)",array,1
+05-P,Count cells equal to one of many things,H10,"=SUM(COUNTIF(B8:B19,Thinges))",array,7
+05-P,Count cells equal to one of many things,H11,"=SUMPRODUCT(COUNTIF(B8:B19,Thinges))",array,7
+05-P,Count cells equal to one of many things,H12,"=SUM(--(ISNUMBER(MATCH(B8:B19,Thinges,0))))",array,7
+05-P,Count cells equal to one of many things,H13,"=SUMPRODUCT(--(ISNUMBER(MATCH(B8:B19,Thinges,0))))",array,7
+06-P,Count cells equal to this or that,J8,"=SUM(COUNTIF(Color,{""Red"",""Blue""}))",array,8
+06-P,Count cells equal to this or that,H18:H21,=UNIQUE(D8:D19),array,Red
+06-P,Count cells equal to this or that,I18,=SUMPRODUCT(--(Color=H18)),array,5
+06-P,Count cells equal to this or that,J18,=SUM(--(Color=H18)),array,5
+06-P,Count cells equal to this or that,I19,=SUMPRODUCT(--(Color=H19)),array,2
+06-P,Count cells equal to this or that,J19,=SUM(--(Color=H19)),array,2
+06-P,Count cells equal to this or that,I20,=SUMPRODUCT(--(Color=H20)),array,3
+06-P,Count cells equal to this or that,J20,=SUM(--(Color=H20)),array,3
+06-P,Count cells equal to this or that,I21,=SUMPRODUCT(--(Color=H21)),array,2
+06-P,Count cells equal to this or that,J21,=SUM(--(Color=H21)),array,2
+07-P,Count cells greater than,G7,"=COUNTIF(C7:C18,F7)",normal,3
+07-P,Count cells greater than,G8,"=COUNTIF(C7:C18,F8)",normal,4
+07-P,Count cells greater than,G15,"=COUNTIF(C7:C18,"">""&F15)",normal,3
+07-P,Count cells greater than,H15,"=COUNTIF(C7:C18,"">90"")",normal,3
+07-P,Count cells greater than,G16,"=COUNTIF(C7:C18,"">=""&F16)",normal,4
+07-P,Count cells greater than,H16,"=COUNTIF(C7:C18,"">=90"")",normal,4
+08-P,Count cells Less than,G7,"=COUNTIF(C7:C18,F7)",normal,3
+08-P,Count cells Less than,G8,"=COUNTIF(C7:C18,F8)",normal,4
+08-P,Count cells Less than,G15,"=COUNTIF(C7:C18,""<""&F15)",normal,3
+08-P,Count cells Less than,H15,"=COUNTIF(C7:C18,""<75"")",normal,3
+08-P,Count cells Less than,G16,"=COUNTIF(C7:C18,""<=""&F16)",normal,4
+08-P,Count cells Less than,H16,"=COUNTIF(C7:C18,""<=75"")",normal,4
+09-P,Count cells not equal to many things,D7:D18,"=N(ISNUMBER(MATCH(B7:B18,F15:F17,0)))",array,1
+09-P,Count cells not equal to many things,G7,"=SUM(--(ISNUMBER(MATCH(B7:B18,F7:F9,0))))",array,9
+09-P,Count cells not equal to many things,H7,"=SUM(N(ISNUMBER(MATCH(B7:B18,F15:F17,0))))",array,9
+09-P,Count cells not equal to many things,G15,"=SUMPRODUCT(--(ISNUMBER(MATCH(B7:B18,F15:F17,0))))",array,9
+10-P,Count cells over n characters,C7,=LEN(B7),normal,29
+10-P,Count cells over n characters,D7:D33,=N(LEN(B7:B33)>G6),array,0
+10-P,Count cells over n characters,G7,=SUM(N(LEN(B7:B33)>G6)),array,9
+10-P,Count cells over n characters,C8,=LEN(B8),normal,40
+10-P,Count cells over n characters,C9,=LEN(B9),normal,28
+10-P,Count cells over n characters,G9,"=COUNTIF(C7:C33,"">""&G6)",normal,9
+10-P,Count cells over n characters,C10,=LEN(B10),normal,34
+10-P,Count cells over n characters,C11,=LEN(B11),normal,18
+10-P,Count cells over n characters,C12,=LEN(B12),normal,43
+10-P,Count cells over n characters,C13,=LEN(B13),normal,24
+10-P,Count cells over n characters,C14,=LEN(B14),normal,34
+10-P,Count cells over n characters,C15,=LEN(B15),normal,41
+10-P,Count cells over n characters,C16,=LEN(B16),normal,38
+10-P,Count cells over n characters,C17,=LEN(B17),normal,23
+10-P,Count cells over n characters,C18,=LEN(B18),normal,26
+10-P,Count cells over n characters,C19,=LEN(B19),normal,33
+10-P,Count cells over n characters,C20,=LEN(B20),normal,45
+10-P,Count cells over n characters,C21,=LEN(B21),normal,40
+10-P,Count cells over n characters,C22,=LEN(B22),normal,30
+10-P,Count cells over n characters,C23,=LEN(B23),normal,24
+10-P,Count cells over n characters,C24,=LEN(B24),normal,39
+10-P,Count cells over n characters,C25,=LEN(B25),normal,41
+10-P,Count cells over n characters,C26,=LEN(B26),normal,29
+10-P,Count cells over n characters,C27,=LEN(B27),normal,43
+10-P,Count cells over n characters,C28,=LEN(B28),normal,33
+10-P,Count cells over n characters,C29,=LEN(B29),normal,29
+10-P,Count cells over n characters,C30,=LEN(B30),normal,31
+10-P,Count cells over n characters,C31,=LEN(B31),normal,33
+10-P,Count cells over n characters,C32,=LEN(B32),normal,26
+10-P,Count cells over n characters,C33,=LEN(B33),normal,24
+11-P,Count cells that are blank,G15,=COUNTBLANK(C7:C21),normal,6
+11-P,Count cells that are blank,H15,"=COUNTIF(C7:C21,"""")",normal,6
+11-P,Count cells that are blank,I15,"=SUM(--(C7:C21=""""))",array,6
+11-P,Count cells that are blank,J15,"=SUMPRODUCT(--(C7:C21=""""))",array,6
+11-P,Count cells that are blank,K15,"=SUMPRODUCT(N(C7:C21=""""))",array,6
+11-P,Count cells that are blank,L15,=SUM(N(LEN(C7:C21)=0)),array,6
+11-P,Count cells that are blank,G16,"=COUNTIFS(C7:C21,"""",B7:B21,""A"")",normal,2
+11-P,Count cells that are blank,H16,"=SUM(--(C7:C21="""")*(B7:B21=""A""))",array,2
+11-P,Count cells that are blank,I16,"=SUMPRODUCT(N(C7:C21="""")*(B7:B21=""A""))",array,2
+11-P,Count cells that are blank,J16,"=SUM(--(LEN(C7:C21)=0)*(B7:B21=""A""))",array,2
+12-P,Count cells that are not blank,P6,"=COUNTIF(O6:O9,""<>"")",normal,2
+12-P,Count cells that are not blank,Q6:Q11,=LEN(O5:O10),array,0
+12-P,Count cells that are not blank,N7,=COUNTA(O4:O9),normal,2
+12-P,Count cells that are not blank,P8,=COUNT(O5:O10),normal,0
+12-P,Count cells that are not blank,P9,=SUM(--(O5:O10<>0)),array,2
+12-P,Count cells that are not blank,G15,=COUNTA(C7:C21),normal,9
+12-P,Count cells that are not blank,H15,"=COUNTIF(C7:C21,""<>"")",normal,9
+12-P,Count cells that are not blank,I15,"=SUM(--(C7:C21<>""""))",array,9
+12-P,Count cells that are not blank,J15,"=SUMPRODUCT(--(C7:C21<>""""))",array,9
+12-P,Count cells that are not blank,K15,"=SUMPRODUCT(N(C7:C21<>""""))",array,9
+12-P,Count cells that are not blank,L15,=SUM(N(LEN(C7:C21)<>0)),array,9
+12-P,Count cells that are not blank,G16,"=COUNTIFS(C7:C21,""<>"",B7:B21,""A"")",normal,4
+12-P,Count cells that are not blank,H16,"=SUM(--(C7:C21<>"""")*(B7:B21=""A""))",array,4
+12-P,Count cells that are not blank,I16,"=SUMPRODUCT(N(C7:C21<>"""")*(B7:B21=""A""))",array,4
+12-P,Count cells that are not blank,J16,"=SUM(--(LEN(C7:C21)<>0)*(B7:B21=""A""))",array,4
+12-P,Count cells that are not blank,K16,"=SUM(--(LEN(C7:C21)>0)*(B7:B21=""A""))",array,4
+13-P,Count cells that contain either x or y,C7,"=SUM(--(SUM(COUNTIF(B7,{""*blue*"",""*green*""}))>0))",array,1
+13-P,Count cells that contain either x or y,C8,"=SUM(--(SUM(COUNTIF(B8,{""*blue*"",""*green*""}))>0))",array,1
+13-P,Count cells that contain either x or y,G8,=SUM(C7:C17),normal,7
+13-P,Count cells that contain either x or y,H8,"=SUM(--(ISNUMBER(FIND(""green"",$B$7:$B$17,1))+ISNUMBER(FIND(""blue"",$B$7:$B$17,1))>0))",array,7
+13-P,Count cells that contain either x or y,C9,"=SUM(--(SUM(COUNTIF(B9,{""*blue*"",""*green*""}))>0))",array,1
+13-P,Count cells that contain either x or y,C10,"=SUM(--(SUM(COUNTIF(B10,{""*blue*"",""*green*""}))>0))",array,1
+13-P,Count cells that contain either x or y,C11,"=SUM(--(SUM(COUNTIF(B11,{""*blue*"",""*green*""}))>0))",array,0
+13-P,Count cells that contain either x or y,C12,"=SUM(--(SUM(COUNTIF(B12,{""*blue*"",""*green*""}))>0))",array,1
+13-P,Count cells that contain either x or y,C13,"=SUM(--(SUM(COUNTIF(B13,{""*blue*"",""*green*""}))>0))",array,0
+13-P,Count cells that contain either x or y,C14,"=SUM(--(SUM(COUNTIF(B14,{""*blue*"",""*green*""}))>0))",array,0
+13-P,Count cells that contain either x or y,C15,"=SUM(--(SUM(COUNTIF(B15,{""*blue*"",""*green*""}))>0))",array,0
+13-P,Count cells that contain either x or y,C16,"=SUM(--(SUM(COUNTIF(B16,{""*blue*"",""*green*""}))>0))",array,1
+13-P,Count cells that contain either x or y,C17,"=SUM(--(SUM(COUNTIF(B17,{""*blue*"",""*green*""}))>0))",array,1
+14-P,Count cells that contain negative numbers,G8,"=COUNTIF(B7:B17,""<""&0)",normal,3
+14-P,Count cells that contain negative numbers,H8,=SUM(--(B7:B17<0)),array,3
+14-P,Count cells that contain negative numbers,I8,"=COUNTIF(B7:B17,""<0"")",normal,3
+15-P,Count cells that contain odd numbers,C7:C17,=--(ISODD(+B7:B17)),array,1
+15-P,Count cells that contain odd numbers,D7:D17,"=MOD(B7:B17,2)=1",array,True
+15-P,Count cells that contain odd numbers,E7:E17,=NOT(--(ISEVEN(+B7:B17))),array,True
+15-P,Count cells that contain odd numbers,G8,=SUM(--(ISODD(+B7:B17))),array,5
+15-P,Count cells that contain odd numbers,H8,"=SUM(--(MOD(B7:B17,2)=1))",array,5
+15-P,Count cells that contain odd numbers,I8,=SUM(--(NOT(--(ISEVEN(+B7:B17))))),array,5
+16-P,Count cells that contain positive numbers,F8,"=COUNTIF(B7:B17,"">0"")",normal,6
+16-P,Count cells that contain positive numbers,G8,=SUM(--(B7:B17>0)),array,6
+16-P,Count cells that contain positive numbers,F9,"=COUNTIF(B7:B17,"">=0"")",normal,8
+16-P,Count cells that contain positive numbers,G9,=SUM(--(B7:B17>=0)),array,8
+17-P,Count cells that contain specific text,C7:C17,"=FIND(C6,LOWER(B7:B17),1)",array,1
+17-P,Count cells that contain specific text,D7:D17,"=SEARCH(C6,B7:B17)",array,1
+17-P,Count cells that contain specific text,G9,"=COUNTIF(B7:B17,""*a*"")",normal,6
+17-P,Count cells that contain specific text,H9,"=SUM(--ISNUMBER(SEARCH(""a"",B7:B17)))",array,6
+17-P,Count cells that contain specific text,I9,"=SUM(--(ISNUMBER(FIND(""a"",LOWER(B7:B17)))))",array,6
+17-P,Count cells that contain specific text,G10,"=COUNTIF(B7:B17,""*2*"")",normal,4
+17-P,Count cells that contain specific text,H10,"=SUM(--ISNUMBER(SEARCH(""2"",B7:B17)))",array,4
+17-P,Count cells that contain specific text,I10,"=SUM(--(ISNUMBER(FIND(""2"",LOWER(B7:B17)))))",array,4
+17-P,Count cells that contain specific text,G11,"=COUNTIF(B7:B17,""*-s*"")",normal,3
+17-P,Count cells that contain specific text,H11,"=SUM(--ISNUMBER(SEARCH(""-s"",B7:B17)))",array,3
+17-P,Count cells that contain specific text,I11,"=SUM(--(ISNUMBER(FIND(""-s"",LOWER(B7:B17)))))",array,3
+17-P,Count cells that contain specific text,G12,"=COUNTIF(B7:B17,""*x*"")",normal,1
+17-P,Count cells that contain specific text,H12,"=SUM(--ISNUMBER(SEARCH(""x"",B7:B17)))",array,1
+17-P,Count cells that contain specific text,I12,"=SUM(--(ISNUMBER(FIND(""x"",LOWER(B7:B17)))))",array,1
+18-P,Count cells that do not contain specific text,C7:C17,"=NOT(ISNUMBER(FIND(C6,LOWER(B7:B17),1)))",array,False
+18-P,Count cells that do not contain specific text,D7:D17,"=NOT(ISNUMBER(SEARCH(C6,B7:B17)))",array,False
+18-P,Count cells that do not contain specific text,G9,"=COUNTIF(B7:B17,""<>*a*"")",normal,5
+18-P,Count cells that do not contain specific text,H9,"=SUM(--NOT(ISNUMBER(SEARCH(""a"",B7:B17))))",array,5
+18-P,Count cells that do not contain specific text,I9,"=SUM(--NOT(ISNUMBER(FIND(""a"",LOWER(B7:B17)))))",array,5
+18-P,Count cells that do not contain specific text,G10,"=COUNTIF(B7:B17,""<>*0*"")",normal,1
+18-P,Count cells that do not contain specific text,H10,"=SUM(--NOT(ISNUMBER(SEARCH(""0"",B7:B17))))",array,1
+18-P,Count cells that do not contain specific text,I10,"=SUM(--NOT(ISNUMBER(FIND(""0"",LOWER(B7:B17)))))",array,1
+18-P,Count cells that do not contain specific text,G11,"=COUNTIF(B7:B17,""<>*-r*"")",normal,7
+18-P,Count cells that do not contain specific text,H11,"=SUM(--NOT(ISNUMBER(SEARCH(""-r"",B7:B17))))",array,7
+18-P,Count cells that do not contain specific text,I11,"=SUM(--NOT(ISNUMBER(FIND(""-r"",LOWER(B7:B17)))))",array,7
+19-P,Count cells that contain errors,E6,=SUMPRODUCT(--ISERROR(DAT)),array,2
+19-P,Count cells that contain errors,F6,=SUM(--(ISERROR(DAT))),array,2
+19-P,Count cells that contain errors,G6,"=SUM(--(IFNA(ERROR.TYPE(DAT),0)>0))",array,2
+19-P,Count cells that contain errors,P6,=SUMPRODUCT(--ISERR(DAT)),array,1
+19-P,Count cells that contain errors,Q6,"=SUMPRODUCT(--(IFERROR(ERROR.TYPE(DAT),0)=3))",array,1
+19-P,Count cells that contain errors,B8,"=FIND(""x"",""the"")",normal,#VALUE!
+19-P,Count cells that contain errors,B12,=NA(),normal,#N/A
+20-P,Count cells that contain errors,E6,=SUMPRODUCT(--NOT(ISERROR(DAT))),array,9
+20-P,Count cells that contain errors,F6,=SUM(--NOT(ISERROR(DAT))),array,9
+20-P,Count cells that contain errors,G6,"=SUM(--NOT(IFNA(ERROR.TYPE(DAT),0)>0))",array,9
+20-P,Count cells that contain errors,B8,"=FIND(""x"",""the"")",normal,#VALUE!
+20-P,Count cells that contain errors,B12,=NA(),normal,#N/A
+22-P,Count dates in given year,C8:C17,=YEAR(B8:B17),array,2023
+22-P,Count dates in given year,D8,"=DATE(F8,1,1)",normal,2023-01-01
+22-P,Count dates in given year,G8,=SUM(--(YEAR($B$8:$B$17)=F8)),array,2
+22-P,Count dates in given year,H8,"=COUNTIF(ANCHORARRAY($C$8),F8)",normal,2
+22-P,Count dates in given year,I8:I10,"=COUNTIF(ANCHORARRAY(C8),F8:F10)",array,2
+22-P,Count dates in given year,J8,=SUMPRODUCT(--(YEAR($B$8:$B$17)=F8)),array,2
+22-P,Count dates in given year,K8,"=SUM(IF(YEAR($B$8:$B$17)=F8,1,0))",array,2
+22-P,Count dates in given year,L8,"=COUNTIFS($B$8:$B$17,"">=""&DATE(F8,1,1),$B$8:$B$17,""<""&DATE(F8,12,31))",normal,2
+22-P,Count dates in given year,D9,"=DATE(F9,1,1)",normal,2022-01-01
+22-P,Count dates in given year,G9,=SUM(--(YEAR($B$8:$B$17)=F9)),array,3
+22-P,Count dates in given year,H9,"=COUNTIF(ANCHORARRAY($C$8),F9)",normal,3
+22-P,Count dates in given year,J9,=SUMPRODUCT(--(YEAR($B$8:$B$17)=F9)),array,3
+22-P,Count dates in given year,K9,"=SUM(IF(YEAR($B$8:$B$17)=F9,1,0))",array,3
+22-P,Count dates in given year,L9,"=COUNTIFS($B$8:$B$17,"">=""&DATE(F9,1,1),$B$8:$B$17,""<""&DATE(F9,12,31))",normal,3
+22-P,Count dates in given year,D10,"=DATE(F10,1,1)",normal,2019-01-01
+22-P,Count dates in given year,G10,=SUM(--(YEAR($B$8:$B$17)=F10)),array,3
+22-P,Count dates in given year,H10,"=COUNTIF(ANCHORARRAY($C$8),F10)",normal,3
+22-P,Count dates in given year,J10,=SUMPRODUCT(--(YEAR($B$8:$B$17)=F10)),array,3
+22-P,Count dates in given year,K10,"=SUM(IF(YEAR($B$8:$B$17)=F10,1,0))",array,3
+22-P,Count dates in given year,L10,"=COUNTIFS($B$8:$B$17,"">=""&DATE(F10,1,1),$B$8:$B$17,""<""&DATE(F10,12,31))",normal,3
+22-P,Count dates in given year,D11,"=DATE(F11,1,1)",normal,1900-01-01
+22-P,Count dates in given year,D12,"=DATE(F12,1,1)",normal,1900-01-01
+22-P,Count dates in given year,D13,"=DATE(F13,1,1)",normal,1900-01-01
+22-P,Count dates in given year,D14,"=DATE(F14,1,1)",normal,1900-01-01
+22-P,Count dates in given year,D15,"=DATE(F15,1,1)",normal,1900-01-01
+22-P,Count dates in given year,D16,"=DATE(F16,1,1)",normal,1900-01-01
+22-P,Count dates in given year,D17,"=DATE(F17,1,1)",normal,1900-01-01
+23-P,Count if row meets internal criteria,E8:E18,=C8:C18>D8:D18,array,False
+23-P,Count if row meets internal criteria,F8:F18,=C8:C18<D8:D18,array,True
+23-P,Count if row meets internal criteria,I8,=SUM(--(C8:C18>D8:D18)),array,4
+23-P,Count if row meets internal criteria,J8,=SUMPRODUCT(--(C8:C18>D8:D18)),array,4
+23-P,Count if row meets internal criteria,I9,=SUM(--(C8:C18<D8:D18)),array,6
+23-P,Count if row meets internal criteria,J9,=SUMPRODUCT(--(C8:C18<D8:D18)),array,6
+24-P,Count if row meets multiple criteria,H5,"=SUM((E5:E15=""TX"")*(C5:C15>100)*(MONTH(F5:F15)=3))",array,2
+24-P,Count if row meets multiple criteria,H6,"=SUMPRODUCT((E5:E15=""TX"")*(C5:C15>100)*(MONTH(F5:F15)=3))",array,2
+25-P,Count if two criteria match,H7,"=COUNTIFS(B7:B17,""Blue"",C7:C17,"">15"")",normal,4
+25-P,Count if two criteria match,I7,"=SUM(--(B7:B17=""Blue"")*(C7:C17>15))",array,4
+25-P,Count if two criteria match,J7,"=SUMPRODUCT(--($B$7:$B$17=""Blue""),--($C$7:$C$17>15))",array,4
+25-P,Count if two criteria match,H8,"=COUNTIFS(B7:B17,""Red"",C7:C17,"">15"")",normal,1
+25-P,Count if two criteria match,I8,"=SUM(--(B7:B17=""Red"")*(C7:C17>15))",array,1
+25-P,Count if two criteria match,J8,"=SUMPRODUCT(--($B$7:$B$17=""Red""),--($C$7:$C$17>15))",array,1
+26-P,Count items in list,C7,"=COUNTIF($B$7:$B$17,B7)",normal,3
+26-P,Count items in list,C8,"=COUNTIF($B$7:$B$17,B8)",normal,5
+26-P,Count items in list,C9,"=COUNTIF($B$7:$B$17,B9)",normal,3
+26-P,Count items in list,C10,"=COUNTIF($B$7:$B$17,B10)",normal,5
+26-P,Count items in list,C11,"=COUNTIF($B$7:$B$17,B11)",normal,3
+26-P,Count items in list,C12,"=COUNTIF($B$7:$B$17,B12)",normal,5
+26-P,Count items in list,C13,"=COUNTIF($B$7:$B$17,B13)",normal,3
+26-P,Count items in list,C14,"=COUNTIF($B$7:$B$17,B14)",normal,3
+26-P,Count items in list,C15,"=COUNTIF($B$7:$B$17,B15)",normal,5
+26-P,Count items in list,C16,"=COUNTIF($B$7:$B$17,B16)",normal,3
+26-P,Count items in list,C17,"=COUNTIF($B$7:$B$17,B17)",normal,5
